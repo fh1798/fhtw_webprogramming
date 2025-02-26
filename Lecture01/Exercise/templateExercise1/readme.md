@@ -10,26 +10,26 @@ Successfully completing this exercise will earn **3 points**.
 ## **Task Description**
 
 ### **Task 1: Static Card Setup**
-- [ ] Define a set of cards directly in the HTML file.
-- [ ] Each card should have a matching pair and contain a placeholder symbol (`?`).
+- [x] Define a set of cards directly in the HTML file.
+- [x] Each card should have a matching pair and contain a placeholder symbol (`?`).
 
 ### **Task 2: OnClick Handling for Cards**
-- [ ] Use the `onclick` attribute in HTML to trigger actions when a card is clicked.
-- [ ] No `addEventListener()` should be used.
+- [x] Use the `onclick` attribute in HTML to trigger actions when a card is clicked.
+- [x] No `addEventListener()` should be used.
 
 ### **Task 3: Card Flip Logic (1 Point)**
-- Ensure that cards can only be clicked once per round.
-- Add a basic visual indicator when a card is flipped.
-- When a card is clicked, its symbol should be revealed by updating its `textContent`.
-- Only two cards can be flipped at a time.
+- [ ] Ensure that cards can only be clicked once per round.
+- [ ] Add a basic visual indicator when a card is flipped.
+- [ ] When a card is clicked, its symbol should be revealed by updating its `textContent`.
+- [ ] Only two cards can be flipped at a time.
 
 ### **Task 4: Match Checking (1 Point)**
-- If the two flipped cards have the same symbol, they remain visible.
-- If they do not match, they should be hidden again after a short delay.
+- [ ] If the two flipped cards have the same symbol, they remain visible.
+- [ ] If they do not match, they should be hidden again after a short delay.
 
 ### **Task 5: Game Completion (1 Point)**
-- When all pairs have been matched, show a simple completion message.
-- Encourage the player to start a new round manually.
+- [ ] When all pairs have been matched, show a simple completion message.
+- [ ] Encourage the player to start a new round manually.
 
 ---
 

@@ -11,10 +11,30 @@
     <div class="container">
         <h1 class="text-center my-4">Memory Game</h1>
         <div id="game-board" class="row justify-content-center">
-            <!-- Card elements will go here -->
+            <div class="card" onclick="flipCard('card-1')" id="card-1"> ? </div>
+            <div class="card" onclick="flipCard('card-2')" id="card-2"> ? </div>
+            <div class="card" onclick="flipCard('card-3')" id="card-3"> ? </div>
+            <div class="card" onclick="flipCard('card-4')" id="card-4"> ? </div>            
         </div>
     </div>
     <script>
+        let cards = {
+            'card-1': 'apple',
+            'card-2': 'banana',
+            'card-3': 'apple',
+            'card-4': 'banana'
+        };
+
+        // Function to handle flipping the card
+        function flipCard(cardId) {
+            console.log("Flipped:", cardId);
+
+            // Get the card element by id
+            let cardElement = document.getElementById(cardId);
+
+            // Change the card content to its assigned value from the cards object
+            cardElement.textContent = cards[cardId];
+        }
         // Place script code here
     </script>
 </body>
