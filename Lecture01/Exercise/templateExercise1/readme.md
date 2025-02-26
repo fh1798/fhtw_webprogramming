@@ -24,8 +24,8 @@ Successfully completing this exercise will earn **3 points**.
 - [x] Only two cards can be flipped at a time.
 
 ### **Task 4: Match Checking (1 Point)**
-- [ ] If the two flipped cards have the same symbol, they remain visible.
-- [ ] If they do not match, they should be hidden again after a short delay.
+- [x] If the two flipped cards have the same symbol, they remain visible.
+- [x] If they do not match, they should be hidden again after a short delay.
 
 ### **Task 5: Game Completion (1 Point)**
 - [ ] When all pairs have been matched, show a simple completion message.

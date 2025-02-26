@@ -50,35 +50,24 @@
             }
         }
 
-        // Function to check if the two flipped cards match
         function checkForMatch() {
             const [firstCardId, secondCardId] = flippedCards;
 
-            // If the cards match, leave them flipped, otherwise reset them
             if (cards[firstCardId] !== cards[secondCardId]) {
                 setTimeout(() => {
-                    resetCards(firstCardId, secondCardId);
-                }, 1000); // Wait 1 second before resetting
-            }
+                    let firstCard = document.getElementById(firstCardId);
+                    let secondCard = document.getElementById(secondCardId);
 
-            // Reset the flipped cards array
+                    firstCard.textContent = "?";
+                    secondCard.textContent = "?";
+
+                    firstCard.classList.remove('flipped');
+                    secondCard.classList.remove('flipped');
+                }, 1000); // Wait 1 second before resetting
+            } // T4: if they're not the same, we flip them back
+
             flippedCards = [];
         }
-
-        // Function to reset the cards back to their original state
-        function resetCards(firstCardId, secondCardId) {
-            let firstCard = document.getElementById(firstCardId);
-            let secondCard = document.getElementById(secondCardId);
-
-            // Reset the cards back to showing "?"
-            firstCard.textContent = "?";
-            secondCard.textContent = "?";
-
-            // Remove the flipped class
-            firstCard.classList.remove('flipped');
-            secondCard.classList.remove('flipped');
-        }
-        // Place script code here
     </script>
 </body>
 </html>
