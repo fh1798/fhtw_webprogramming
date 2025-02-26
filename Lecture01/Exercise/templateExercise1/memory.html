@@ -10,11 +10,22 @@
 <body>
     <div class="container">
         <h1 class="text-center my-4">Memory Game</h1>
-        <div id="game-board" class="row justify-content-center">
+        <div id="game-board" class="row justify-content-center"> 
+            <!-- cards being shown -->
             <div class="card" onclick="flipCard('card-1')" id="card-1"> ? </div>
             <div class="card" onclick="flipCard('card-2')" id="card-2"> ? </div>
             <div class="card" onclick="flipCard('card-3')" id="card-3"> ? </div>
             <div class="card" onclick="flipCard('card-4')" id="card-4"> ? </div>            
+        </div>
+        <!-- a div for the congrats message -->
+        <div id="congratulations-message" class="congratulations-message" style="display: none;">
+            <h1 class="text-center my-4">Congratulations!</h1>
+        </div>
+        <!-- and one for the reset button -->
+        <div class="reset-button-container">
+            <button id="reset-button" class="reset-button" onclick="resetGame()" style="display: none;">
+                Reset Game
+            </button>
         </div>
     </div>
 
@@ -28,6 +39,7 @@
         };
 
         let flippedCards = []; // Array of flipped cards
+        let matchedCards = 0; // Keep track of matched pairs
 
         function flipCard(cardId) {
             if (flippedCards.length === 2) {
@@ -53,7 +65,14 @@
         function checkForMatch() {
             const [firstCardId, secondCardId] = flippedCards;
 
-            if (cards[firstCardId] !== cards[secondCardId]) {
+            if (cards[firstCardId] === cards[secondCardId]) {
+                matchedCards++;
+                console.log(matchedCards);
+                if (matchedCards === 2) {
+                    document.getElementById('congratulations-message').style.display = 'block';
+                    document.getElementById('reset-button').style.display = 'block';
+                }
+            } else {
                 setTimeout(() => {
                     let firstCard = document.getElementById(firstCardId);
                     let secondCard = document.getElementById(secondCardId);
@@ -67,6 +86,24 @@
             } // T4: if they're not the same, we flip them back
 
             flippedCards = [];
+        }
+
+        // Function to reset the game and start a new game
+        function resetGame() {
+            // Reset the board and variables
+            matchedCards = 0;
+            flippedCards = [];
+
+            // Reset all cards
+            for (let cardId in cards) {
+                let cardElement = document.getElementById(cardId);
+                cardElement.textContent = "?";
+                cardElement.classList.remove('flipped');
+            }
+
+            // Hide the congratulations message and reset button
+            document.getElementById('congratulations-message').style.display = 'none';
+            document.getElementById('reset-button').style.display = 'none';
         }
     </script>
 </body>

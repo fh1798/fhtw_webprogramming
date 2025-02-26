@@ -25,3 +25,35 @@ body {
 .card.flipped {
     background-color: #28a745;
 }
+
+/* Additional styles for the reset button */
+.reset-button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.reset-button {
+    width: 100px;
+    height: 100px;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    margin-top: 20px;
+}
+
+.reset-button:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the Congratulations message */
+.congratulations-message {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #28a745;
+    margin-top: 20px;
+}

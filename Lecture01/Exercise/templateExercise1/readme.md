@@ -28,8 +28,8 @@ Successfully completing this exercise will earn **3 points**.
 - [x] If they do not match, they should be hidden again after a short delay.
 
 ### **Task 5: Game Completion (1 Point)**
-- [ ] When all pairs have been matched, show a simple completion message.
-- [ ] Encourage the player to start a new round manually.
+- [x] When all pairs have been matched, show a simple completion message.
+- [x] Encourage the player to start a new round manually.
 
 ---
 
