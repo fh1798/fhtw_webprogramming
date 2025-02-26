@@ -18,10 +18,10 @@ Successfully completing this exercise will earn **3 points**.
 - [x] No `addEventListener()` should be used.
 
 ### **Task 3: Card Flip Logic (1 Point)**
-- [ ] Ensure that cards can only be clicked once per round.
-- [ ] Add a basic visual indicator when a card is flipped.
-- [ ] When a card is clicked, its symbol should be revealed by updating its `textContent`.
-- [ ] Only two cards can be flipped at a time.
+- [x] Ensure that cards can only be clicked once per round.
+- [x] Add a basic visual indicator when a card is flipped.
+- [x] When a card is clicked, its symbol should be revealed by updating its `textContent`.
+- [x] Only two cards can be flipped at a time.
 
 ### **Task 4: Match Checking (1 Point)**
 - [ ] If the two flipped cards have the same symbol, they remain visible.

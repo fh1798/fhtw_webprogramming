@@ -17,6 +17,8 @@
             <div class="card" onclick="flipCard('card-4')" id="card-4"> ? </div>            
         </div>
     </div>
+
+
     <script>
         let cards = {
             'card-1': 'apple',
@@ -25,15 +27,56 @@
             'card-4': 'banana'
         };
 
-        // Function to handle flipping the card
-        function flipCard(cardId) {
-            console.log("Flipped:", cardId);
+        let flippedCards = []; // Array of flipped cards
 
-            // Get the card element by id
+        function flipCard(cardId) {
+            if (flippedCards.length === 2) {
+                return; // T3: only two cards can be flipped at a time
+            }
+
             let cardElement = document.getElementById(cardId);
 
-            // Change the card content to its assigned value from the cards object
-            cardElement.textContent = cards[cardId];
+            if (cardElement.classList.contains('flipped')) {
+                return; // T3: ensure that cards can only be clicked once per round
+            }
+
+            // Flip the card
+            cardElement.textContent = cards[cardId]; // T3: when a card is clicked ...
+            cardElement.classList.add('flipped'); // T3: add a basic visual indicator when a card is flipped
+            flippedCards.push(cardId);
+
+            if (flippedCards.length === 2) {
+                checkForMatch(); // T4: match checking
+            }
+        }
+
+        // Function to check if the two flipped cards match
+        function checkForMatch() {
+            const [firstCardId, secondCardId] = flippedCards;
+
+            // If the cards match, leave them flipped, otherwise reset them
+            if (cards[firstCardId] !== cards[secondCardId]) {
+                setTimeout(() => {
+                    resetCards(firstCardId, secondCardId);
+                }, 1000); // Wait 1 second before resetting
+            }
+
+            // Reset the flipped cards array
+            flippedCards = [];
+        }
+
+        // Function to reset the cards back to their original state
+        function resetCards(firstCardId, secondCardId) {
+            let firstCard = document.getElementById(firstCardId);
+            let secondCard = document.getElementById(secondCardId);
+
+            // Reset the cards back to showing "?"
+            firstCard.textContent = "?";
+            secondCard.textContent = "?";
+
+            // Remove the flipped class
+            firstCard.classList.remove('flipped');
+            secondCard.classList.remove('flipped');
         }
         // Place script code here
     </script>
