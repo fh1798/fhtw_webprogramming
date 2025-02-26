@@ -10,12 +10,12 @@ Successfully completing this exercise will earn **3 points**.
 ## **Task Description**
 
 ### **Task 1: Static Card Setup**
-- [] Define a set of cards directly in the HTML file.
-- [] Each card should have a matching pair and contain a placeholder symbol (`?`).
+- [ ] Define a set of cards directly in the HTML file.
+- [ ] Each card should have a matching pair and contain a placeholder symbol (`?`).
 
 ### **Task 2: OnClick Handling for Cards**
-- [] Use the `onclick` attribute in HTML to trigger actions when a card is clicked.
-- [] No `addEventListener()` should be used.
+- [ ] Use the `onclick` attribute in HTML to trigger actions when a card is clicked.
+- [ ] No `addEventListener()` should be used.
 
 ### **Task 3: Card Flip Logic (1 Point)**
 - Ensure that cards can only be clicked once per round.
