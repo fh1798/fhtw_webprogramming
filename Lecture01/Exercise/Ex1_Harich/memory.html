@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Memory Game</h1>
+        <div id="game-board" class="row justify-content-center"> 
+            <!-- cards being shown -->
+            <div class="card" onclick="flipCard('card-1')" id="card-1"> ? </div>
+            <div class="card" onclick="flipCard('card-2')" id="card-2"> ? </div>
+            <div class="card" onclick="flipCard('card-3')" id="card-3"> ? </div>
+            <div class="card" onclick="flipCard('card-4')" id="card-4"> ? </div>            
+        </div>
+        <!-- a div for the congrats message -->
+        <div id="congratulations-message" class="congratulations-message" style="display: none;">
+            <h1 class="text-center my-4">Congratulations!</h1>
+        </div>
+        <!-- and one for the reset button -->
+        <div class="reset-button-container">
+            <button id="reset-button" class="reset-button" onclick="resetGame()" style="display: none;">
+                Reset Game
+            </button>
+        </div>
+    </div>
+
+
+    <script>
+        let cards = {
+            'card-1': 'apple',
+            'card-2': 'banana',
+            'card-3': 'apple',
+            'card-4': 'banana'
+        };
+
+        let flippedCards = []; // Array of flipped cards
+        let matchedCards = 0; // Keep track of matched pairs
+
+        function flipCard(cardId) {
+            if (flippedCards.length === 2) {
+                return; // T3: only two cards can be flipped at a time
+            }
+
+            let cardElement = document.getElementById(cardId);
+
+            if (cardElement.classList.contains('flipped')) {
+                return; // T3: ensure that cards can only be clicked once per round
+            }
+
+            // Flip the card
+            cardElement.textContent = cards[cardId]; // T3: when a card is clicked ...
+            cardElement.classList.add('flipped'); // T3: add a basic visual indicator when a card is flipped
+            flippedCards.push(cardId);
+
+            if (flippedCards.length === 2) {
+                checkForMatch(); // T4: match checking
+            }
+        }
+
+        function checkForMatch() {
+            const [firstCardId, secondCardId] = flippedCards;
+
+            if (cards[firstCardId] === cards[secondCardId]) {
+                matchedCards++;
+                console.log(matchedCards);
+                if (matchedCards === 2) {
+                    document.getElementById('congratulations-message').style.display = 'block';
+                    document.getElementById('reset-button').style.display = 'block';
+                }
+            } else {
+                setTimeout(() => {
+                    let firstCard = document.getElementById(firstCardId);
+                    let secondCard = document.getElementById(secondCardId);
+
+                    firstCard.textContent = "?";
+                    secondCard.textContent = "?";
+
+                    firstCard.classList.remove('flipped');
+                    secondCard.classList.remove('flipped');
+                }, 1000); // Wait 1 second before resetting
+            } // T4: if they're not the same, we flip them back
+
+            flippedCards = [];
+        }
+
+        // Function to reset the game and start a new game
+        function resetGame() {
+            // Reset the board and variables
+            matchedCards = 0;
+            flippedCards = [];
+
+            // Reset all cards
+            for (let cardId in cards) {
+                let cardElement = document.getElementById(cardId);
+                cardElement.textContent = "?";
+                cardElement.classList.remove('flipped');
+            }
+
+            // Hide the congratulations message and reset button
+            document.getElementById('congratulations-message').style.display = 'none';
+            document.getElementById('reset-button').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
