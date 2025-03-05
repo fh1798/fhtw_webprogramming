@@ -8,7 +8,7 @@ body {
 
 /* Style for the container */
 .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -34,11 +34,10 @@ body {
     width: 30px;
     height: 130px;
     background-color: black;
-    position: absolute;
+    position: relative;
     top: 0;
     z-index: 2;
     cursor: pointer;
-    left: calc(50% - 15px);
 }
 
 /* Add hover effects */

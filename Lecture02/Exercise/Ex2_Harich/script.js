@@ -7,11 +7,12 @@ const sounds = {
     keyG: 'sounds/G.mp3',
     keyA: 'sounds/A.mp3',
     keyB: 'sounds/B.mp3',
+    keyC2: 'sounds/C.mp3',
     keyCSharp: 'sounds/C.mp3',  // Assuming C# uses the same sound as C
-    keyDSharp: 'sounds/D.mp3',  // Assuming D# uses the same sound as D
+    keyDSharp: 'sounds/Dis.mp3',
     keyFSharp: 'sounds/F.mp3',  // Assuming F# uses the same sound as F
     keyGSharp: 'sounds/G.mp3',  // Assuming G# uses the same sound as G
-    keyASharp: 'sounds/A.mp3'   // Assuming A# uses the same sound as A
+    keyASharp: 'sounds/Ais.mp3'
 };
 
 // Function to play sound when a key is clicked
@@ -28,6 +29,8 @@ document.getElementById('keyF').addEventListener('click', () => playSound('keyF'
 document.getElementById('keyG').addEventListener('click', () => playSound('keyG'));
 document.getElementById('keyA').addEventListener('click', () => playSound('keyA'));
 document.getElementById('keyB').addEventListener('click', () => playSound('keyB'));
+document.getElementById('keyC2').addEventListener('click', () => playSound('keyC2'));  // Added event listener for C2
+
 
 // For the black keys
 document.getElementById('keyCSharp').addEventListener('click', () => playSound('keyCSharp'));
@@ -47,6 +50,7 @@ document.addEventListener('keydown', (event) => {
         case 'h': playSound('keyA'); break;
         case 'j': playSound('keyB'); break;
         case 'k': playSound('keyC'); break;
+        case 'k': playSound('keyC2'); break; // Added mapping for C2
         // Add other key mappings here
     }
 });
