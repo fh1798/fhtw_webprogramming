@@ -10,19 +10,19 @@ Successfully completing this exercise will earn **3 points**.
 ## **Task Description**
 
 ### **Task 1: Set Up the Virtual Piano (1 Point)**
-- Use the provided **HTML and CSS templates** to create a piano layout.
-- Ensure the piano keys are correctly styled and positioned.
-- Each key should have a unique identifier corresponding to a musical note.
+- [ ] Use the provided **HTML and CSS templates** to create a piano layout.
+- [ ] Ensure the piano keys are correctly styled and positioned.
+- [ ] Each key should have a unique identifier corresponding to a musical note.
 
 ### **Task 2: Implement Sound Playback (1 Point)**
-- Ensure that each key plays the correct sound when clicked.
-- Each key must correspond to a specific `.mp3` file stored in the `sounds` folder.
-- Use the `<audio>` element in HTML or JavaScript to trigger sound playback.
+- [ ] Ensure that each key plays the correct sound when clicked.
+- [ ] Each key must correspond to a specific `.mp3` file stored in the `sounds` folder.
+- [ ] Use the `<audio>` element in HTML or JavaScript to trigger sound playback.
 
 ### **Task 3: Enable Keyboard Input (1 Point)**
-- Implement a way to play notes using keyboard keys (e.g., "A", "S", "D").
-- Ensure that the correct note is played when the associated key is pressed.
-- Test the functionality by verifying that both mouse clicks and keyboard presses trigger the expected notes.
+- [ ] Implement a way to play notes using keyboard keys (e.g., "A", "S", "D").
+- [ ] Ensure that the correct note is played when the associated key is pressed.
+- [ ] Test the functionality by verifying that both mouse clicks and keyboard presses trigger the expected notes.
 
 ---
 
