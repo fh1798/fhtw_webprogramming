@@ -1,0 +1,69 @@
+body {
+    background-color: #f8f9fa;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 10px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 8px;
+    user-select: none;
+}
+
+/* Styles for when the card is flipped (orange background) */
+.card.flipped {
+    background-color: #f39388;
+    color: white; /* Change the text color to ensure visibility */
+    transition: background-color 0.3s ease;
+}
+
+/* Styles for when the card is matched (green background) */
+.card.matched {
+    background-color: #28a745;
+    color: white; /* Change text color to ensure visibility */
+    transition: background-color 0.3s ease;
+}
+
+/* Additional styles for the reset button */
+.reset-button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.reset-button {
+    width: 100px;
+    height: 100px;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    margin-top: 20px;
+}
+
+.reset-button:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the Congratulations message */
+.congratulations-message {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #28a745;
+    margin-top: 20px;
+}
