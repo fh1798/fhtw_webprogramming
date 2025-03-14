@@ -1,5 +1,5 @@
 // Task 1
-const cardSymbols = ['🍎', '🍌', '🍇', '🍍', '🍓', '🍉', '🍒', '🍊'];
+const cardSymbols = ['🍎', '🍌'];//, '🍇', '🍍', '🍓', '🍉', '🍒', '🍊'];
 const cards = [...cardSymbols, ...cardSymbols]; 
 
 // Task 2: Shuffling
