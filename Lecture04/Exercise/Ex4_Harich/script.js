@@ -10,7 +10,7 @@ const noteMapping = {
     'g': 'G',
     'h': 'A',
     'j': 'B',
-    'k': 'C2'
+    'k': 'C'
 };
 
 // Function to generate the piano keys dynamically (only white keys for now)
@@ -43,7 +43,7 @@ function playNote(note) {
     // Remove active class after a short delay
     setTimeout(() => {
         document.getElementById(`key-${note}`).classList.remove('active');
-    }, 200);
+    }, 400);
 }
 
 // Handle key press events
@@ -100,13 +100,13 @@ function playSequence(sequenceName) {
             } else {
                 clearInterval(intervalId);  // Stop playing when the sequence is finished
             }
-        }, 100); // Base interval for next note
+        }, 500); // Base interval for next note
     }
 }
 
 // Function to play a note with its corresponding duration based on BPM
 function playNoteWithDuration(note, duration) {
-    const audio = new Audio(`sounds/${note}.mp3`); // Assuming the sound files are in the 'sounds' folder
+    const audio = new Audio(`sounds/${note}.mp3`);
     audio.play();
 
     // Add active visual feedback
