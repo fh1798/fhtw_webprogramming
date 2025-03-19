@@ -5,16 +5,16 @@ The goal of this exercise is to extend the functionality of the Piano Game by ut
 
 #### Task Description
 1. **Piano Key Representation** (1 point)
-   - [ ] Define piano keys as JavaScript objects, storing their relevant properties such as musical note and corresponding keyboard key.
+   - [x] Define piano keys as JavaScript objects, storing their relevant properties such as musical note and corresponding keyboard key.
    
 2. **Dynamic Note Loading** (1 point)
-   - [ ] Retrieve musical note sequences from an external JSON file using the fetch API. The loaded data should be processed and made available for interactive use within the game.
+   - [x] Retrieve musical note sequences from an external JSON file using the fetch API. The loaded data should be processed and made available for interactive use within the game.
 
 3. **User Interaction** (1 point)
-   - [ ] Implement interactive controls that allow users to trigger piano notes by either pressing designated keys on the keyboard or clicking on the displayed piano keys.
+   - [x] Implement interactive controls that allow users to trigger piano notes by either pressing designated keys on the keyboard or clicking on the displayed piano keys.
    
 4. **Reset Functionality** (1 point)
-   - [ ] Provide a mechanism to reset the game state, clearing active styles or effects and preparing the interface for a new session.
+   - [x] Provide a mechanism to reset the game state, clearing active styles or effects and preparing the interface for a new session.
 
 #### Achievement Criteria
 To successfully complete this exercise, students must:
