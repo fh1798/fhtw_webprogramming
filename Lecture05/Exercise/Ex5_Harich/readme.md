@@ -37,9 +37,9 @@ Successfully completing this exercise will earn **5 points**.
 ---
 
 ## **Optional Enhancements**
-- Extend the implementation by creating a class to manage multiple piano keys.
-- Implement a method to play a sequence of notes with proper state updates.
-- Introduce an enumeration to manage musical note values with type safety.
+- [ ] Extend the implementation by creating a class to manage multiple piano keys.
+- [ ] Implement a method to play a sequence of notes with proper state updates.
+- [ ] Introduce an enumeration to manage musical note values with type safety.
 
 ---
 

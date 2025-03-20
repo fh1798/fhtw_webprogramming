@@ -1,0 +1,54 @@
+{
+    "sequences": [
+        {
+            "name": "Peter's Brünnele (F-Dur)",
+            "notes": [
+                {"note": "A", "duration": 8},
+                {"note": "G", "duration": 8},
+                {"note": "F", "duration": 2},
+                {"note": "C", "duration": 8},
+                {"note": "F", "duration": 8},
+                {"note": "C", "duration": 8},
+                {"note": "F", "duration": 8},
+                {"note": "E", "duration": 4},
+                {"note": "A", "duration": 4},
+                {"note": "A", "duration": 4}
+            ]
+        },
+        {
+            "name": "Walking Base",
+            "notes": [
+                {"note": "C", "duration": 4},
+                {"note": "E", "duration": 4},
+                {"note": "G", "duration": 4},
+                {"note": "E", "duration": 4},
+                {"note": "C", "duration": 4},
+                {"note": "E", "duration": 4},
+                {"note": "G", "duration": 4},
+                {"note": "E", "duration": 4}
+            ]
+        },
+        {
+            "name": "Blues Base",
+            "notes": [
+                {"note": "C", "duration": 4},
+                {"note": "E", "duration": 4},
+                {"note": "G", "duration": 4},
+                {"note": "F", "duration": 4},
+                {"note": "C", "duration": 4},
+                {"note": "E", "duration": 4},
+                {"note": "G", "duration": 4},
+                {"note": "F", "duration": 4}
+            ]
+        },
+        {
+            "name": "Haydn's Fifth (I think, is it?)",
+            "notes": [
+                {"note": "E", "duration": 8},
+                {"note": "E", "duration": 8},
+                {"note": "E", "duration": 8},
+                {"note": "C", "duration": 1}
+            ]
+        }
+    ]
+}

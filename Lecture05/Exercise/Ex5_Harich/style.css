@@ -1,0 +1,24 @@
+.key {
+    width: 60px;
+    height: 200px;
+    background-color: white;
+    margin: 0 2px;
+    display: inline-block;
+    text-align: center;
+    line-height: 200px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.key.active {
+    background-color: #f0a;
+}
+
+#piano {
+    position: relative;
+}
+
+#piano .key {
+    z-index: 2;
+}
