@@ -10,9 +10,9 @@ Successfully completing this exercise will earn **5 points**.
 ## **Task Description**
 
 ### **Task 1: Set Up TypeScript (1 Point)**
-- [ ] Install TypeScript and configure it in the project.
-- [ ] Generate and modify the TypeScript configuration file.
-- [ ] Organize the project structure by creating a source folder for TypeScript files.
+- [x] Install TypeScript and configure it in the project.
+- [x] Generate and modify the TypeScript configuration file.
+- [x] Organize the project structure by creating a source folder for TypeScript files.
 
 ### **Task 2: Add Type Annotations (2 Points)**
 - [ ] Define type annotations for core game variables.
