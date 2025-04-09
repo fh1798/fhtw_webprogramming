@@ -10,19 +10,54 @@ body {
 
 .card {
   width: 100px;
-  height: 100px;
-  background-color: #007bff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: #fff;
+  height: 150px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  margin: 5px;
+  display: inline-block;
+  text-align: center;
+  line-height: 150px;  /* Vertically center text */
+  font-size: 2em;      /* Adjust font size to fit symbols */
   cursor: pointer;
-  border-radius: 8px;
-  user-select: none;
+  transition: transform 0.3s;
 }
 
-.matched {
+.card.flipped {
+  background-color: #fff;  /* Lighter color for flipped cards */
+}
+
+.card.matched {
+  background-color: #90ee90; /* Green color for matched cards */
+}
+
+/* Additional styles for the reset button */
+.reset-button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.reset-button {
+  width: 100px;
+  height: 100px;
   background-color: #28a745;
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  margin-top: 20px;
 }
 
+.reset-button:hover {
+  background-color: #0056b3;
+}
+
+/* Style for the Congratulations message */
+.congratulations-message {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #28a745;
+  margin-top: 20px;
+}

@@ -10,8 +10,8 @@ Each team can earn **up to 10 points** based on the successful completion of spe
 ## **Tasks and Evaluation Criteria**
 
 ### **Task 1: Code Refactoring and Optimization (2 points)**
-- [ ] Improve the existing TypeScript structure for better readability and maintainability.
-- [ ] Apply best practices such as using `interfaces`, `enums`, and `generics`.
+- [x] Improve the existing TypeScript structure for better readability and maintainability.
+- [x] Apply best practices such as using `interfaces`, `enums`, and `generics`.
 - [ ] **Include a README file** explaining the implementation and any additional features.
 
 ### **Task 2: Game Configurability (2 points)**
