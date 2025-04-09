@@ -26,6 +26,28 @@ let players: Player[] = [];
 let currentPlayerIndex: number = 0; // Tracks whose turn it is
 let cards: Card[] = []; // Array holding the cards
 
+// Function to handle the start of the game with the selected number of pairs
+function setupGame(): void {
+    const cardPairsSelect = document.getElementById('card-pairs') as HTMLSelectElement;
+    const selectedPairs = parseInt(cardPairsSelect.value, 10);
+
+    // Ensure that at least 2 pairs are selected, otherwise default to 4 pairs.
+    if (selectedPairs < 2) {
+        alert('Please select at least 2 card pairs.');
+        return;
+    }
+
+    // Call initializeGame with selected number of pairs
+    const playerNames = ['Player 1', 'Player 2']; // Default players for now (you could add more functionality for this)
+    initializeGame(playerNames, selectedPairs);
+}
+
+// Add event listener for the "Start Game" button
+const startGameButton = document.getElementById('start-game');
+if (startGameButton) {
+    startGameButton.addEventListener('click', setupGame);
+}
+
 function shuffleCards(cards: Card[]): Card[] {
     for (let i = cards.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -140,7 +162,6 @@ function updateBoard(): void {
         gameBoard.appendChild(cardElement);
     });
 }
-
 
 function switchPlayer(): void {
     currentPlayerIndex = (currentPlayerIndex + 1) % players.length;

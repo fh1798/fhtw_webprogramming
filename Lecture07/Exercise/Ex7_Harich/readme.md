@@ -15,8 +15,8 @@ Each team can earn **up to 10 points** based on the successful completion of spe
 - [ ] **Include a README file** explaining the implementation and any additional features.
 
 ### **Task 2: Game Configurability (2 points)**
-- [ ] Allow players to select the number of card pairs before starting the game.
-- [ ] Ensure the settings update dynamically based on user input.
+- [x] Allow players to select the number of card pairs before starting the game.
+- [x] Ensure the settings update dynamically based on user input.
 
 ### **Task 3: Multiplayer Mode (3 points)**
 - [ ] Implement player tracking with an alternating turn system.
