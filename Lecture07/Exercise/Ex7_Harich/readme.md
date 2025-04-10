@@ -1,44 +1,27 @@
-# Week 7: Memory Game Refactoring - Task Description
+# Memory Card Game
 
-## **Objective**
-The goal of this exercise is to **enhance and extend the Memory Game** using TypeScript. Each team consists of **2 students**, who will collaborate on improving the game’s structure, features, and user interface.
+## Overview
+A simple memory card game built using HTML, CSS, and TypeScript. The goal is to match pairs of cards. Players take turns to flip cards and try to find matching pairs.
 
-Each team can earn **up to 10 points** based on the successful completion of specific tasks.
+## Features
+- Selectable number of card pairs (2 to 8).
+- Two-player mode with alternating turns.
+- Tracks and displays player scores.
+- Game ends when all pairs are matched, and the winner is announced.
 
----
+## Setup
+1. Clone the repository.
+2. Run `npm install` to install dependencies.
+3. Compile TypeScript with `tsc`.
+4. Open `index.html` in a browser to play.
 
-## **Tasks and Evaluation Criteria**
+## Gameplay
+1. Choose the number of pairs (2 to 8).
+2. Players take turns flipping two cards.
+3. If the cards match, they stay flipped.
+4. The first player to match all pairs wins.
 
-### **Task 1: Code Refactoring and Optimization (2 points)**
-- [x] Improve the existing TypeScript structure for better readability and maintainability.
-- [x] Apply best practices such as using `interfaces`, `enums`, and `generics`.
-- [ ] **Include a README file** explaining the implementation and any additional features.
-
-### **Task 2: Game Configurability (2 points)**
-- [x] Allow players to select the number of card pairs before starting the game.
-- [x] Ensure the settings update dynamically based on user input.
-
-### **Task 3: Multiplayer Mode (3 points)**
-- [ ] Implement player tracking with an alternating turn system.
-- [ ] Display the current player and update the scoreboard dynamically.
-- [ ] Ensure a fair and structured point system for scoring.
-
-### **Task 4: UI and User Experience Enhancements (2 points)**
-- [ ] Highlight the active player's turn visually.
-- [ ] Implement animations for card flipping and matching pairs.
-- [ ] Display an intuitive end-game summary with final scores.
-
-### **Bonus Challenge (1 point)**
-- Implement a **hint system** that briefly reveals unmatched cards.
-- Introduce different **game themes** (e.g., fruits, animals, numbers).
-
----
-
-## **Submission Requirements**
-- **Submit the project as a ZIP file via Moodle.**
-- **Ensure full documentation** with comments explaining key components.
-- **Maintain type safety** using TypeScript best practices.
-
----
-
-Good luck and happy coding!
+## Game Logic
+- Cards are shuffled randomly at the start.
+- Players flip two cards per turn, checking for matches.
+- The game alternates between players and keeps track of scores.
