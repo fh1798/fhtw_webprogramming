@@ -1,0 +1,15 @@
+{
+    "name": "chat-demo",
+    "version": "1.0.0",
+    "main": "index.html",
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "description": "",
+    "devDependencies": {
+      "typescript": "^5.8.3"
+    }
+  }

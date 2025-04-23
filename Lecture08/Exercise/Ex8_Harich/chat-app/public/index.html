@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Week 8: TypeScript Messenger</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <h1>TypeScript Messenger (Week 8)</h1>
+  
+  <!-- 1) Register Form -->
+  <section>
+    <h2>Register (Task 1)</h2>
+    <form id="registerForm">
+      <label for="regName">Name: </label>
+      <input type="text" id="regName" required><br>
+
+      <label for="regEmail">Email: </label>
+      <input type="email" id="regEmail" required><br>
+
+      <label for="regPass">Password: </label>
+      <input type="password" id="regPass" required><br>
+
+      <label for="regGroup">Group ID: </label>
+      <input type="number" id="regGroup" required><br>
+
+      <button type="submit">Register</button>
+    </form>
+    <div id="registerResult"></div>
+  </section>
+
+  <hr/>
+
+  <!-- 2) Login Form -->
+  <section>
+    <h2>Login (Task 2)</h2>
+    <form id="loginForm">
+      <label for="loginUser">Username/Email: </label>
+      <input type="text" id="loginUser" required><br>
+
+      <label for="loginPass">Password: </label>
+      <input type="password" id="loginPass" required><br>
+
+      <button type="submit">Login</button>
+    </form>
+    <div id="loginResult"></div>
+  </section>
+
+  <hr/>
+
+  <!-- 3) Load Users -->
+  <section>
+    <h2>Get Users (Task 3)</h2>
+    <button id="loadUsersBtn">Load Users</button>
+    <ul id="usersList"></ul>
+  </section>
+
+  <hr/>
+
+  <!-- 4) Send Message -->
+  <section>
+    <h2>Send Message (Task 4)</h2>
+    <form id="sendForm">
+      <label for="senderId">Sender ID: </label>
+      <input type="text" id="senderId" required><br>
+
+      <label for="receiverId">Receiver ID: </label>
+      <input type="text" id="receiverId" required><br>
+
+      <label for="messageText">Message: </label>
+      <input type="text" id="messageText" required><br>
+
+      <button type="submit">Send</button>
+    </form>
+    <div id="sendResult"></div>
+  </section>
+
+  <!-- Script references – could be a bundled file or separate transpiled modules -->
+  <script type="module" src="dist/main.js"></script>
+  <!-- 
+    If not bundling, you might have something like:
+    <script type="module" src="../dist/ChatUI.js"></script>
+    <script type="module">
+      import { ChatUI } from '../dist/ChatUI.js';
+      new ChatUI();
+    </script>
+  -->
+</body>
+</html>
