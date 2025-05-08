@@ -13,6 +13,15 @@ export interface ApiResponse {
     name: string;
     group_id: string;
   }
+
+
+  export interface Message {
+    sender_id: string;
+    receiver_id: string;
+    message: string;
+    timestamp: number;
+  }
+
   
   const BASE_URL = "http://webp-ilv-backend.cs.technikum-wien.at/messenger";
   
@@ -149,5 +158,21 @@ export interface ApiResponse {
       });
       return resp.json();
     }
+
+     //import type { Message } from "./types.js"; // Or define Message inline if you don't have types.ts
+
+static async getConversation(user1_id: string, user2_id: string): Promise<Message[]> {
+  const params = new URLSearchParams({
+    token: this.token || "",
+    user1_id,
+    user2_id,
+  });
+
+  const url = `${BASE_URL}/get_conversation.php?${params.toString()}`;
+  const resp = await fetch(url);
+  const data = await resp.json();
+  return data;
+}
   }
   
+ 

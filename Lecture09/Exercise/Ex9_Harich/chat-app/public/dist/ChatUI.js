@@ -12,6 +12,7 @@ import { ApiService } from "./ApiService.js";
 import { StateManager } from "./StateManager.js";
 export class ChatUI {
     constructor() {
+        this.selectedUserId = null;
         this.initEventListeners();
     }
     initEventListeners() {
@@ -122,7 +123,10 @@ export class ChatUI {
                         usersList.innerHTML = "";
                         data.forEach((user) => {
                             const li = document.createElement("li");
-                            li.textContent = `User: ${user.name} (ID: ${user.id}), group: ${user.group_id}`;
+                            li.textContent = `${user.name} (Group: ${user.group_id})`;
+                            li.dataset.userId = user.id;
+                            li.style.cursor = "pointer";
+                            li.addEventListener("click", () => this.onUserClick(user.id));
                             usersList.appendChild(li);
                         });
                     }
@@ -172,5 +176,38 @@ export class ChatUI {
                     sendResultDiv.textContent = "Network or server error while sending message.";
             }
         });
+    }
+    onUserClick(userId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            this.selectedUserId = userId; // Store selected user (optional for later use)
+            const currentUser = StateManager.getCurrentUser();
+            if (!currentUser)
+                return;
+            const messages = yield ApiService.getConversation(currentUser.id, userId);
+            this.displayConversation(messages); // You’ll implement this next
+        });
+    }
+    displayConversation(messages) {
+        const chatContainer = document.getElementById("chat-messages");
+        if (!chatContainer)
+            return;
+        chatContainer.innerHTML = ""; // Clear old messages
+        const currentUser = StateManager.getCurrentUser();
+        if (!currentUser)
+            return;
+        messages.forEach(msg => {
+            const msgDiv = document.createElement("div");
+            msgDiv.classList.add("chat-message");
+            if (msg.sender_id === currentUser.id) {
+                msgDiv.classList.add("sent");
+            }
+            else {
+                msgDiv.classList.add("received");
+            }
+            msgDiv.textContent = msg.message;
+            chatContainer.appendChild(msgDiv);
+        });
+        // Optional: scroll to bottom
+        chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 }

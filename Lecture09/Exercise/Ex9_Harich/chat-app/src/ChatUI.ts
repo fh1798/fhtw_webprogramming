@@ -4,7 +4,9 @@ import { ApiService } from "./ApiService.js";
 import { StateManager } from "./StateManager.js";
 import type { User, ApiResponse } from "./ApiService.js";
 
+
 export class ChatUI {
+  private selectedUserId: string | null = null;
 
   constructor() {
     this.initEventListeners();
@@ -117,9 +119,15 @@ export class ChatUI {
           usersList.innerHTML = "";
           data.forEach((user: User) => {
             const li = document.createElement("li");
-            li.textContent = `User: ${user.name} (ID: ${user.id}), group: ${user.group_id}`;
+            li.textContent = `${user.name} (Group: ${user.group_id})`;
+            li.dataset.userId = user.id;
+          
+            li.style.cursor = "pointer";
+            li.addEventListener("click", () => this.onUserClick(user.id));
+          
             usersList.appendChild(li);
           });
+          
         }
       } else {
         // data is an object with `error` property
@@ -160,4 +168,43 @@ export class ChatUI {
       if (sendResultDiv) sendResultDiv.textContent = "Network or server error while sending message.";
     }
   }
+
+  private async onUserClick(userId: string) {
+    this.selectedUserId = userId; // Store selected user (optional for later use)
+  
+    const currentUser = StateManager.getCurrentUser();
+    if (!currentUser) return;
+  
+    const messages = await ApiService.getConversation(currentUser.id, userId);
+    this.displayConversation(messages); // You’ll implement this next
+  }
+  
+  private displayConversation(messages: any[]) {
+    const chatContainer = document.getElementById("chat-messages");
+    if (!chatContainer) return;
+  
+    chatContainer.innerHTML = ""; // Clear old messages
+  
+    const currentUser = StateManager.getCurrentUser();
+    if (!currentUser) return;
+  
+    messages.forEach(msg => {
+      const msgDiv = document.createElement("div");
+      msgDiv.classList.add("chat-message");
+  
+      if (msg.sender_id === currentUser.id) {
+        msgDiv.classList.add("sent");
+      } else {
+        msgDiv.classList.add("received");
+      }
+  
+      msgDiv.textContent = msg.message;
+      chatContainer.appendChild(msgDiv);
+    });
+  
+    // Optional: scroll to bottom
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  }
+  
+  
 }

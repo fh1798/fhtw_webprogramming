@@ -113,6 +113,20 @@ export class ApiService {
             return resp.json();
         });
     }
+    //import type { Message } from "./types.js"; // Or define Message inline if you don't have types.ts
+    static getConversation(user1_id, user2_id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const params = new URLSearchParams({
+                token: this.token || "",
+                user1_id,
+                user2_id,
+            });
+            const url = `${BASE_URL}/get_conversation.php?${params.toString()}`;
+            const resp = yield fetch(url);
+            const data = yield resp.json();
+            return data;
+        });
+    }
 }
 // We store the token here after login
 ApiService.token = null;
