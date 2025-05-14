@@ -1,1 +1,4 @@
-<p>message-list works!</p>
+<h2>Messages</h2>
+<div *ngFor="let msg of messages">
+  <strong>{{ msg.sender }}</strong>: {{ msg.content }}
+</div>
