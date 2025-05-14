@@ -7,8 +7,9 @@ import { AppComponent } from './app.component';
 import { IntroComponent } from './intro/intro.component';
 import { LoginComponent } from './auth/login/login.component';
 import { MessageListComponent } from './message/message-list/message-list.component';
-import { routes } from './app.routes';
 import { MessageModule } from './message/message.module';
+
+import { routes } from './app.routes';
 
 @NgModule({
   declarations: [

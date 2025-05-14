@@ -6,5 +6,9 @@ import { MessageListComponent } from './message/message-list/message-list.compon
 export const routes: Routes = [
   { path: '', component: IntroComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'messages', component: MessageListComponent }
+  {
+    path: 'messages',
+    loadComponent: () =>
+      import('./message/message-list/message-list.component').then(m => m.MessageListComponent)
+  }
 ];
