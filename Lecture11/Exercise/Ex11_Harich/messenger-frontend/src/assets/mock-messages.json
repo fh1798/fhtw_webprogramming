@@ -3,4 +3,4 @@
     { "sender": "Bob", "content": "Welcome to the messenger app!" },
     { "sender": "Alice", "content": "Oh, hey Bob! Nice to see you here!" },
     { "sender": "Chris", "content": "Alice! Happy to see you, haven't heard from you in a while.." }
-]  
+]

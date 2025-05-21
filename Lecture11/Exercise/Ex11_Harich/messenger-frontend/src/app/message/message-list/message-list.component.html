@@ -3,7 +3,7 @@
 <div *ngIf="msgService.errorMessage()">{{ msgService.errorMessage() }}</div>
 
 <ul>
-  <li *ngFor="let msg of msgService.messages()">
+  <li *ngFor="let msg of msgService.filteredMessages()">
     <strong>{{ msg.sender }}:</strong> {{ msg.content }}
   </li>
 </ul>
