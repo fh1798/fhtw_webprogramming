@@ -1,0 +1,10 @@
+<h3>Contacts</h3>
+
+<div *ngIf="isLoading()">Loading contacts...</div>
+<div *ngIf="errorMessage()">{{ errorMessage() }}</div>
+
+<ul *ngIf="!isLoading() && !errorMessage()">
+  <li *ngFor="let user of contacts()" (click)="selectContact(user)">
+    {{ user.name }}
+  </li>
+</ul>

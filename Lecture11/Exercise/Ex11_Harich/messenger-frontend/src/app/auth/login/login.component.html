@@ -1,6 +1,13 @@
 <h2>Login</h2>
-<form>
-  <input placeholder="Username" /><br />
-  <input placeholder="Password" type="password" /><br />
+<form (ngSubmit)="onLogin()">
+  <label>
+    Username:
+    <input [(ngModel)]="username" name="username" required />
+  </label>
+  <label>
+    Password:
+    <input type="password" [(ngModel)]="password" name="password" required />
+  </label>
   <button type="submit">Login</button>
+  <div *ngIf="error">{{ error }}</div>
 </form>
