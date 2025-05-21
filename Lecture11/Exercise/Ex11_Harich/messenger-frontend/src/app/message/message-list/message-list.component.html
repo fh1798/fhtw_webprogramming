@@ -1,4 +1,9 @@
 <h2>Messages</h2>
-<div *ngFor="let msg of messages">
-  <strong>{{ msg.sender }}</strong>: {{ msg.content }}
-</div>
+<div *ngIf="msgService.isLoading()">Loading...</div>
+<div *ngIf="msgService.errorMessage()">{{ msgService.errorMessage() }}</div>
+
+<ul>
+  <li *ngFor="let msg of msgService.messages()">
+    <strong>{{ msg.sender }}:</strong> {{ msg.content }}
+  </li>
+</ul>

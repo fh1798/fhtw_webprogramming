@@ -1,5 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { MessageService } from '../message.service';
+
+interface Message {
+  sender: string;
+  content: string;
+}
 
 @Component({
   standalone: true,
@@ -8,9 +14,10 @@ import { Component } from '@angular/core';
   templateUrl: './message-list.component.html',
   styleUrls: ['./message-list.component.css']
 })
+
+
 export class MessageListComponent {
-  messages = [
-    { sender: 'Alice', content: 'Hello there!' },
-    { sender: 'Bob', content: 'Welcome to the messenger app!' }
-  ];
+  constructor(public msgService: MessageService) {
+    this.msgService.loadMessages();
+  }
 }
