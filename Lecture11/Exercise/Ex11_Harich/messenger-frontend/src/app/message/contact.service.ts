@@ -15,7 +15,7 @@ export class ContactService {
   readonly errorMessage = signal('');
   readonly selectedContact = signal<string | null>(null);
 
-selectContact(name: string) {
+selectContact(name: string | null) {
   this.selectedContact.set(name);
 }
 

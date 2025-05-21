@@ -7,3 +7,10 @@
     <strong>{{ msg.sender }}:</strong> {{ msg.content }}
   </li>
 </ul>
+
+<!-- Message input and send -->
+<div style="margin-top: 1rem;">
+  <input [(ngModel)]="newMessage" placeholder="Type a message..." />
+  <button (click)="sendMessage()" [disabled]="!newMessage.trim()">Send</button>
+  <button (click)="refreshMessages()">Refresh</button>
+</div>
